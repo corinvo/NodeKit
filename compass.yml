@@ -1,0 +1,16 @@
+name: NodeKit
+id: ari:cloud:compass:86c77645-0db3-40f3-adb0-62cbda6e2699:component/dbfb6e58-f64e-411c-8e29-e76180226ad6/98d6c098-7d47-4790-9b7c-977cd68c9c3b
+description: Corinvo's central repository for SDK's and CDK's for Node runtimes.
+configVersion: 1
+typeId: SERVICE
+fields:
+  tier: 4
+links:
+  - name: null
+    type: REPOSITORY
+    url: https://github.com/corinvo/NodeKit
+relationships:
+  DEPENDS_ON: []
+labels:
+  - source:github
+customFields: null
