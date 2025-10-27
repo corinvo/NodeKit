@@ -1,0 +1,209 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+// Button
+.crv-btn {
+  @include button-base;
+
+  &-sm {
+    padding: $space-sm $space-md;
+    font-size: 0.875rem;
+  }
+
+  &-md {
+    padding: $space-sm $space-lg;
+    font-size: 1rem;
+  }
+
+  &-lg {
+    padding: $space-md $space-xl;
+    font-size: 1.125rem;
+  }
+
+  &-primary {
+    background: $primary;
+    color: white;
+
+    &:hover:not(:disabled) {
+      background: $primary-hover;
+    }
+
+    &:active:not(:disabled) {
+      background: $primary-active;
+    }
+  }
+
+  &-secondary {
+    background: $bg-secondary;
+    color: $text;
+    border: 1px solid $border;
+
+    &:hover:not(:disabled) {
+      background: $bg-hover;
+    }
+
+    @include dark-mode {
+      background: #1e293b;
+      color: #f8fafc;
+      border-color: #334155;
+
+      &:hover:not(:disabled) {
+        background: #334155;
+      }
+    }
+  }
+
+  &-ghost {
+    background: transparent;
+    color: $text-secondary;
+
+    &:hover:not(:disabled) {
+      background: $bg-hover;
+      color: $text;
+    }
+
+    @include dark-mode {
+      color: #cbd5e1;
+
+      &:hover:not(:disabled) {
+        background: #334155;
+        color: #f8fafc;
+      }
+    }
+  }
+
+  &-full-width {
+    width: 100%;
+  }
+}
+
+// Input
+.crv-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: $space-xs;
+}
+
+.crv-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: $text;
+
+  @include dark-mode {
+    color: #f8fafc;
+  }
+}
+
+.crv-input {
+  @include input-base;
+
+  &-error {
+    border-color: $error;
+  }
+}
+
+.crv-hint {
+  font-size: 0.75rem;
+  color: $text-secondary;
+
+  @include dark-mode {
+    color: #cbd5e1;
+  }
+}
+
+.crv-error {
+  font-size: 0.75rem;
+  color: $error;
+  font-weight: 500;
+}
+
+// Card
+.crv-card {
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: $radius-lg;
+  padding: $space-xl;
+  box-shadow: $shadow-sm;
+  max-width: 400px;
+  width: 100%;
+
+  @include dark-mode {
+    background: #0f172a;
+    border-color: #334155;
+  }
+}
+
+// OTP Input
+.crv-otp {
+  &-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  display: flex;
+  gap: $space-sm;
+  justify-content: center;
+
+  &-input {
+    width: 3rem;
+    height: 3.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: 2px solid $border;
+    border-radius: $radius-md;
+    color: $text;
+    background: $bg;
+    transition: $transition;
+
+    &:focus {
+      outline: none;
+      border-color: $border-focus;
+      box-shadow: $shadow-focus;
+    }
+
+    &-error {
+      border-color: $error;
+    }
+
+    @include dark-mode {
+      color: #f8fafc;
+      background: #0f172a;
+      border-color: #334155;
+    }
+  }
+}
+
+// Flow Container
+.crv-flow {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $text;
+
+    @include dark-mode {
+      color: #f8fafc;
+    }
+  }
+}
+
+.crv-description {
+  margin: 0;
+  color: $text-secondary;
+  font-size: 0.875rem;
+
+  @include dark-mode {
+    color: #cbd5e1;
+  }
+}
+
+// Utilities
+.crv-full-width {
+  width: 100%;
+}

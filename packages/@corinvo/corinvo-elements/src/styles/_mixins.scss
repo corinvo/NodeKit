@@ -1,0 +1,47 @@
+@use './variables' as *;
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  border-radius: $radius-md;
+  transition: $transition;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin input-base {
+  width: 100%;
+  padding: $space-sm $space-md;
+  border: 1px solid $border;
+  border-radius: $radius-md;
+  font-size: 1rem;
+  font-family: inherit;
+  color: $text;
+  background: $bg;
+  transition: $transition;
+
+  &:focus {
+    outline: none;
+    border-color: $border-focus;
+    box-shadow: $shadow-focus;
+  }
+
+  &::placeholder {
+    color: $text-secondary;
+    opacity: 0.5;
+  }
+
+  @include dark-mode {
+    color: #f8fafc;
+    background: #0f172a;
+    border-color: #334155;
+  }
+}
